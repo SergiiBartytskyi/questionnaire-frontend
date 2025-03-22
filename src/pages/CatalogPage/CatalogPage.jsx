@@ -1,10 +1,11 @@
 import { useEffect, useState } from "react";
-import QuestionnaireList from "../components/QuestionnaireList/QuestionnaireList";
-import Loader from "../components/Loader/Loader";
-import ErrorMessage from "../components/ErrorMessage/ErrorMessage";
-import { fetchQuestionnaires } from "../services/api";
+import QuestionnaireList from "../../components/QuestionnaireList/QuestionnaireList";
+import Loader from "../../components/Loader/Loader";
+import ErrorMessage from "../../components/ErrorMessage/ErrorMessage";
+import { fetchQuestionnaires } from "../../services/api";
+import styles from "./CatalogPage.module.css";
 
-const HomePage = () => {
+const CatalogPage = () => {
   const [questionnaires, setQuestionnaires] = useState([]);
   const [loading, setLoading] = useState(false);
   const [error, setError] = useState(null);
@@ -15,7 +16,7 @@ const HomePage = () => {
         setError(null);
         setLoading(true);
         const data = (await fetchQuestionnaires()).data;
-        console.log("data :>> ", data);
+
         setQuestionnaires(data);
       } catch (error) {
         if (error instanceof Error) {
@@ -32,14 +33,15 @@ const HomePage = () => {
   }, []);
 
   if (loading) return <Loader />;
-  console.log("questionnaires :>> ", questionnaires);
   return (
-    <section>
-      <h1>Questionnaire List</h1>
-      {!loading && <QuestionnaireList questionnaires={questionnaires} />}
-      {error && <ErrorMessage message={error} />}
+    <section className={styles.section}>
+      <div className={styles.container}>
+        <h1>Questionnaire List</h1>
+        {!loading && <QuestionnaireList questionnaires={questionnaires} />}
+        {error && <ErrorMessage message={error} />}
+      </div>
     </section>
   );
 };
 
-export default HomePage;
+export default CatalogPage;

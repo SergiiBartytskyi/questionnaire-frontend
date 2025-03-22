@@ -1,10 +1,11 @@
 import QuestionnaireItem from "../QuestionnaireItem/QuestionnaireItem";
+import styles from "./QuestionnaireList.module.css";
 
 const QuestionnaireList = ({ questionnaires }) => {
   return (
-    <ul>
+    <ul className={styles.list}>
       {questionnaires.map((questionnaire) => (
-        <li key={questionnaire._id} className="card">
+        <li key={questionnaire._id} className={styles.item}>
           <QuestionnaireItem questionnaire={questionnaire} />
         </li>
       ))}
