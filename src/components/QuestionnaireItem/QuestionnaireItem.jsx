@@ -1,4 +1,3 @@
-import { useState } from "react";
 import { deleteQuestionnaire } from "../../services/api";
 import styles from "./QuestionnaireItem.module.css";
 
@@ -7,13 +6,6 @@ const QuestionnaireItem = ({ questionnaire }) => {
 
   const handleDelete = async (id) => {
     await deleteQuestionnaire(id);
-  };
-
-  const showModal = () => {
-    setOpen(true);
-  };
-  const closeModal = () => {
-    setOpen(false);
   };
 
   return (
@@ -33,7 +25,9 @@ const QuestionnaireItem = ({ questionnaire }) => {
       <div className={styles.btnWrapper}>
         <button className={styles.btn}>Run</button>
         <button className={styles.btn}>Edit</button>
-        <button className={styles.btn}>Delete</button>
+        <button onClick={() => handleDelete(_id)} className={styles.btn}>
+          Delete
+        </button>
       </div>
     </div>
   );

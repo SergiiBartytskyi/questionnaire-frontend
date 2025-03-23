@@ -1,0 +1,12 @@
+.wrapper {
+  display: flex;
+  flex-direction: column;
+  gap: 20px;
+}
+
+.questionwrapper {
+  display: flex;
+  gap: 30px;
+}
+
+.answer {}

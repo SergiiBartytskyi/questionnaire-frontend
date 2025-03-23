@@ -36,7 +36,7 @@ const CatalogPage = () => {
   return (
     <section className={styles.section}>
       <div className={styles.container}>
-        <h1>Questionnaire List</h1>
+        <h1>Quiz Catalog</h1>
         {!loading && <QuestionnaireList questionnaires={questionnaires} />}
         {error && <ErrorMessage message={error} />}
       </div>
