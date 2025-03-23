@@ -1,0 +1,21 @@
+.section {
+  padding: 24px 0;
+}
+
+.container {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  gap: 30px;
+  width: 100%;
+  padding: 0 24px;
+}
+
+.answerWrapper {
+  margin-bottom: 16px;
+  padding: 16px;
+  border: 1px solid currentColor;
+  border-radius: 8px;
+  width: 100%;
+}

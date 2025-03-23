@@ -1,19 +1,3 @@
-// import QuestionnaireForm from "../../components/QuestionnaireForm/QuestionnaireForm";
-// import styles from "./BuilderPage.module.css";
-
-// const BuilderPage = () => {
-//   return (
-//     <section className={styles.section}>
-//       <div className={styles.container}>
-//         <h1>Create Quiz</h1>
-//         <QuestionnaireForm />
-//       </div>
-//     </section>
-//   );
-// };
-
-// export default BuilderPage;
-
 import React, { useState } from "react";
 import {
   TextField as Input,
@@ -82,30 +66,6 @@ const BuilderPage = () => {
   };
 
   const handleSubmit = () => {
-    // const questionnaireData = {
-    //   name,
-    //   description,
-    //   questions,
-    // };
-    // // Send questionnaireData to the backend
-    // console.log(questionnaireData);
-    // // Example of sending data to the backend
-
-    // fetch("/api/submit-questionnaire", {
-    //   method: "POST",
-    //   headers: {
-    //     "Content-Type": "application/json",
-    //   },
-    //   body: JSON.stringify(questionnaireData),
-    // })
-    //   .then((response) => response.json())
-    //   .then((data) => {
-    //     console.log("Success:", data);
-    //   })
-    //   .catch((error) => {
-    //     console.error("Error:", error);
-    //   });
-
     const addQuestion = async () => {
       try {
         setError(null);

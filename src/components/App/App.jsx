@@ -4,6 +4,8 @@ import HomePage from "../../pages/HomePage/HomePage";
 import NotFoundPage from "../../pages/NotFoundPage";
 import CatalogPage from "../../pages/CatalogPage/CatalogPage";
 import BuilderPage from "../../pages/BuilderPage/BuilderPage";
+import QuizDetailsPage from "../../pages/QuizDetailsPage/QuizDetailsPage";
+import InteractivePage from "../../pages/InteractivePage/InteractivePage";
 function App() {
   return (
     <>
@@ -14,7 +16,9 @@ function App() {
           <Routes>
             <Route path="/" element={<HomePage />} />
             <Route path="/catalog" element={<CatalogPage />} />
-            <Route path="/builder" element={<BuilderPage />} />
+            <Route path="/create" element={<BuilderPage />} />
+            <Route path="/edit/:id" element={<QuizDetailsPage />} />
+            <Route path="/take/:id" element={<InteractivePage />} />
             {/* <Route path="/movies" element={<MoviesPage />} />
             <Route path="/movies/:movieId" element={<MovieDetailsPage />}>
               <Route path="cast" element={<MovieCast />} />
